@@ -39,6 +39,7 @@
         <activity
             android:name=".InterestActivity"
             android:label="@string/title_activity_interest"
+            android:parentActivityName=".RecyclerViewActivity"
             android:theme="@style/AppTheme"></activity>
     </application>
 

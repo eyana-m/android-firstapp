@@ -75,7 +75,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        final String[] osArray = { "Feed", "Favorites", "Explore", "Interest", "Recent Activity", "Settings"};
+        final String[] osArray = { "Feed", "Favorites", "Explore", "Interests", "Recent Activity", "Settings"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 
@@ -93,20 +93,23 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         switch (position){
             case 0:
-
+                mDrawerLayout.closeDrawers();
+                //startActivity(new Intent(this, RecyclerViewActivity.class));
                 break;
             case 1:
-
+                Toast.makeText(this,"Favorites",Toast.LENGTH_SHORT).show();
                 break;
             case 2:
-
+                Toast.makeText(this,"Explore",Toast.LENGTH_SHORT).show();
                 break;
 
             case 3:
+                startActivity(new Intent(this, InterestActivity.class));
                 break;
             case 4:
                 break;
             case 5:
+                Toast.makeText(this,"Settings has no back button",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
             default:
@@ -166,8 +169,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this,"Settings has no back button",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
+
+
+
 
         // Activate the navigation drawer toggle
         if (mDrawerToggle.onOptionsItemSelected(item)) {
