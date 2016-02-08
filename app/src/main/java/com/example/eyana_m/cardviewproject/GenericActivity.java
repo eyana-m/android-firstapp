@@ -22,19 +22,9 @@ public class GenericActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
         }
 
-
-//        getSupportActionBar().setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
-//
-//
-//
 
         //Thanks http://stackoverflow.com/questions/4429036/passing-string-array-between-android-activities
 
@@ -58,8 +48,6 @@ public class GenericActivity extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.person_image);
         imageView.setImageBitmap(bitmap);
-
-
 
     }
 

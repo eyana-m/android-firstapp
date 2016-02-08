@@ -4,7 +4,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -36,9 +35,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         setContentView(R.layout.content_main);
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        toolbar.bringToFront();
 
         mDrawerList = (ListView)findViewById(R.id.navList);mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         mActivityTitle = getTitle().toString();
@@ -78,16 +74,36 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "Android", "iOS", "Windows", "OS X", "Linux" };
+        final String[] osArray = { "Feed", "Favorites", "Explore", "Interest", "Recent Activity", "Settings"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(RecyclerViewActivity.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(RecyclerViewActivity.this, "Time for an upgrade! " + osArray[position], Toast.LENGTH_SHORT).show();
+                itemRedirect(position, osArray[position]);
             }
         });
+    }
+
+    private void itemRedirect(int position, String label){
+
+        switch (position){
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            default:
+                break;
+        }
+
     }
 
     private void setupDrawer() {

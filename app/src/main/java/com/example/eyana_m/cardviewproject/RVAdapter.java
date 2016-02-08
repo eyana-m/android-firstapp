@@ -69,19 +69,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
             Bundle mBundle =new Bundle();
             mBundle.putStringArray("personData", personData);
 
-
-
             Intent intent = new Intent(mContext, GenericActivity.class);
             intent.putExtras(mBundle);
             intent.putExtra("photo", image);
 
-
-
             mContext.startActivity(intent);
-
-
-
-
 
 
         }

@@ -25,6 +25,7 @@
         <activity
             android:name=".GenericActivity"
             android:label="@string/title_activity_generic"
+            android:parentActivityName=".RecyclerViewActivity"
             android:theme="@style/AppTheme" />
     </application>
 
