@@ -27,6 +27,19 @@
             android:label="@string/title_activity_generic"
             android:parentActivityName=".RecyclerViewActivity"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".RecyclerViewActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.eyana_m.cardviewproject.RecyclerViewActivity" />
+        </activity>
+        <activity
+            android:name=".InterestActivity"
+            android:label="@string/title_activity_interest"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

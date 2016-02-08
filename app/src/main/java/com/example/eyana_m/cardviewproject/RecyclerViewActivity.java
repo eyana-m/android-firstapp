@@ -1,5 +1,6 @@
 package com.example.eyana_m.cardviewproject;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -99,6 +100,14 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 break;
             case 2:
 
+                break;
+
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                startActivity(new Intent(this, SettingsActivity.class));
                 break;
             default:
                 break;
