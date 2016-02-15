@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class InterestActivity extends AppCompatActivity {
 
@@ -34,6 +36,8 @@ public class InterestActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+       
+
         rv2=(RecyclerView)findViewById(R.id.rv2);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -42,6 +46,30 @@ public class InterestActivity extends AppCompatActivity {
         initializeData();
         initializeAdapter();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
 

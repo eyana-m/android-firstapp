@@ -83,7 +83,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                //Toast.makeText(RecyclerViewActivity.this, "Time for an upgrade! " + osArray[position], Toast.LENGTH_SHORT).show();
+               
                 itemRedirect(position, osArray[position]);
             }
         });
@@ -94,7 +94,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         switch (position){
             case 0:
                 mDrawerLayout.closeDrawers();
-                //startActivity(new Intent(this, RecyclerViewActivity.class));
                 break;
             case 1:
                 Toast.makeText(this,"Favorites",Toast.LENGTH_SHORT).show();
@@ -105,12 +104,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
             case 3:
                 startActivity(new Intent(this, InterestActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case 4:
                 break;
             case 5:
-                Toast.makeText(this,"Settings has no back button",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, SettingsActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             default:
                 break;
@@ -184,6 +184,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
     
