@@ -76,10 +76,6 @@ public class InterestActivity extends AppCompatActivity {
     private void initializeData(){
         interests = new ArrayList<>();
 
-        //must get data from database
-        //this are just samples
-        //photo size is not automatically optimized
-
         interests.add(new Interest("Coffee", R.drawable.interest_coffee2));
         interests.add(new Interest("Food", R.drawable.interest_food2));
         interests.add(new Interest("Fashion", R.drawable.interest_fashion));

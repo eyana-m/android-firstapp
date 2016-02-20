@@ -49,16 +49,12 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
         @Override
         public void onClick(View itemView) {
 
-
             //personName = (TextView)itemView.findViewById(R.id.person_name);
             String name = personName.getText().toString();
             String film = personFilm.getText().toString();
             Bitmap image=((BitmapDrawable)personPhoto.getDrawable()).getBitmap();
 
-
             Context mContext = itemView.getContext();
-
-
 
             String[] personData = {
                     name,
@@ -74,7 +70,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
             intent.putExtra("photo", image);
 
             mContext.startActivity(intent);
-
 
         }
     }

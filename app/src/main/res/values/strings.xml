@@ -66,4 +66,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_interest">My Interests</string>
+    <string name="title_activity_by_interest">ByInterestActivity</string>
 </resources>

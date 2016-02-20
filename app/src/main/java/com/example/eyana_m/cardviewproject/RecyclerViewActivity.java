@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,9 +57,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private void initializeData(){
         persons = new ArrayList<>();
 
-        //must get data from database
-        //this are just samples
-        //photo size is not automatically optimized
         persons.add(new Person("James Dean", "Rebel Without A Cause", R.drawable.jamesdean));
         persons.add(new Person("Cary Grant", "North by Northwest", R.drawable.cary));
         persons.add(new Person("Marlon Brando", "A Streetcar Named Desire", R.drawable.marlonb));
@@ -70,7 +66,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     private void initializeAdapter(){
         RVAdapter adapter = new RVAdapter(persons);
-
         rv.setAdapter(adapter);
     }
 
@@ -83,7 +78,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-               
+
                 itemRedirect(position, osArray[position]);
             }
         });

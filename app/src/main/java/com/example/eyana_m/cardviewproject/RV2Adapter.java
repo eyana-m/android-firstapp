@@ -24,21 +24,44 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RV2Adapter extends RecyclerView.Adapter<RV2Adapter.InterestViewHolder> {
+public class RV2Adapter extends RecyclerView.Adapter<RV2Adapter.InterestViewHolder>  {
     ArrayList<RVAdapter> data;
 
-    public static class InterestViewHolder extends RecyclerView.ViewHolder {
+    public static class InterestViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView cv;
         TextView interestName;
         ImageView interestPhoto;
 
-        //Card attributed
         InterestViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv2);
             interestName = (TextView)itemView.findViewById(R.id.interest_name);
             interestPhoto = (ImageView)itemView.findViewById(R.id.interest_photo);
+            cv.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View itemView) {
+
+            String name = interestName.getText().toString();
+            Bitmap image=((BitmapDrawable)interestPhoto.getDrawable()).getBitmap();
+
+            Context mContext = itemView.getContext();
+
+            String[] interestData = {
+                    name
+            };
+            Toast.makeText(mContext, "You selected " + name, Toast.LENGTH_LONG).show();
+//
+//            Bundle mBundle =new Bundle();
+//            mBundle.putStringArray("interestData", interestData);
+
+            Intent intent = new Intent(mContext, ByInterestActivity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("photo", image);
+
+            mContext.startActivity(intent);
 
         }
 
